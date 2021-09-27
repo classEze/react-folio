@@ -1,0 +1,49 @@
+@import "../../global.scss";
+
+div.intro{
+display: flex;
+ section{
+     flex:1;
+     overflow: hidden;
+     img{
+         width: 700px;
+         height: 700px;
+         border-radius: 50%;
+         object-fit: cover;
+         float: right;
+     }
+     &.intro-right{
+         align-self: center;
+         text-align: center;
+         font-size: 30px;
+         h2,h3,h5 {
+             padding: 0;
+             margin: 0;
+         }
+         h2{
+            font-size: 50px;
+         }
+         h5{
+             font-family: $secFont;
+         }
+         span{
+             font-family: $primFont;
+             color: rgb(231, 63, 63);
+         }
+         .arrow-down{
+             margin-top: 10px;
+             font-size: 50px;
+             animation:fade 2s infinite both linear;
+             @keyframes fade{
+                 from{
+                     transform: translateY(-2px);
+                     opacity: 0.5;
+                 }
+
+             }
+         }
+     }
+ }
+
+}
+

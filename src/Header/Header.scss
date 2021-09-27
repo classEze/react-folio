@@ -1,0 +1,28 @@
+@import "../global.scss";
+
+div.header{
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: space-between;
+    background: rgb(255, 255, 255);
+    border-bottom:1px solid $mainColor;
+    section{
+        display: flex;
+    }
+
+    ul{
+        list-style-type: none;
+        display: flex;
+        opacity: 0.5;
+        li{
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+    }
+}

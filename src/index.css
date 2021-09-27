@@ -4,10 +4,40 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+*{
+  box-sizing: border-box;
+}
+#root > * {
+  width: 100%;
+}
+.grid{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.flex{
+  display: flex;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.anchor-button{
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  text-decoration: none;
+  transition: all 2s ease;
+}
+.anchor-button:hover{
+  transform: scaleX(1.1);
 }

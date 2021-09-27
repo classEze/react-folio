@@ -1,0 +1,64 @@
+@import "../../global.scss";
+
+.portfolio{
+    .portfolio-head{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    li{
+        display: inline-block;
+    }
+    ul.portfolio-tabs{
+        text-align: center;
+        li{
+            font-size: 20px;
+            cursor: pointer;
+            margin: 0 10px;
+            &.active{
+                border-bottom: 2px solid rgb(231, 63, 63);
+            }
+        }
+    }
+    ul.items-container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+        li.portfolio-item{
+            position: relative;
+            color: white;
+            font-size: 12px;
+            width:200px;
+            height: 170px;
+            border: 1px solid rgba(23,44,56,0.2);
+            box-shadow: 1px 5px 10px $mainColor;
+            margin: 5px 15px;
+            overflow: hidden;
+            span{
+                position: absolute;
+                bottom: 1px;
+                right: 1px;
+                padding: 5px;
+                background: rgba(0,0,0,0.6);
+                margin: 0;
+            };
+            a{
+                position: absolute;
+                bottom: 1px;
+                left: 1px;
+                padding: 5px;
+                background: $mainColor;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
