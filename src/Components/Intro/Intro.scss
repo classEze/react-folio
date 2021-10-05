@@ -1,49 +1,66 @@
 @import "../../global.scss";
 
 div.intro{
-display: flex;
+flex-direction: column;
+overflow: hidden;
  section{
-     flex:1;
-     overflow: hidden;
-     img{
-         width: 700px;
-         height: 700px;
-         border-radius: 50%;
+     position: relative;
+     height:50%;
+     img:first-child{
+         width: 100%;
+         height: 100%;
          object-fit: cover;
-         float: right;
      }
-     &.intro-right{
-         align-self: center;
+     img:last-child{
+         position: absolute;
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+         bottom: -95px;
+         left: 10%;
+         object-fit: cover;
+         border: 2px solid white;
+         z-index: 5;
+     }
+     &.intro-bottom{
+        .arrow-down{
+            @keyframes fade{
+                from{
+                    transform: translateY(-3px);
+                }
+            }
+            position: absolute;
+            bottom:10px;
+            font-size: 70px;
+            animation:fade 0.7s infinite alternate linear;
+         }
          text-align: center;
-         font-size: 30px;
-         h2,h3,h5 {
-             padding: 0;
-             margin: 0;
+         background: #ededed;
+         img{
+            opacity: 0.5;
+             width: 45%;
+             height: 100%;
          }
-         h2{
-            font-size: 50px;
+         aside{
+            p {
+                padding: 0;
+                margin: 0;
+                font-family:"Signika Negative", sans-serif;
+                font-size: 23px;
+                &.three{
+                color: $mainColor;
+                font-family: "Poppins";
+                }
+    
+            }
+             position: absolute;
+             top: 10px;
+             left: 50%;
+             padding: 3px 20px;
+             transform: translateX(-50%);
+             font-size: 16px;
          }
-         h5{
-             font-family: $secFont;
-         }
-         span{
-             font-family: $primFont;
-             color: rgb(231, 63, 63);
-         }
-         .arrow-down{
-             margin-top: 10px;
-             font-size: 50px;
-             animation:fade 2s infinite both linear;
-             @keyframes fade{
-                 from{
-                     transform: translateY(-2px);
-                     opacity: 0.5;
-                 }
-
-             }
-         }
+         
      }
- }
-
-}
+ }}
 

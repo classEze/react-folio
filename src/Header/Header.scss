@@ -5,24 +5,34 @@ div.header{
     width: 100%;
     position: fixed;
     z-index: 5;
-    display: flex;
-    align-items: center;
     padding: 0 15px;
+    background: rgba(20, 20, 20,0.1);
     justify-content: space-between;
-    background: rgb(255, 255, 255);
-    border-bottom:1px solid $mainColor;
-    section{
-        display: flex;
-    }
+    font-size: 18px;
+         ul{
+            list-style-type: none;
+            margin-right: calc(100% - 20);
+            @include mobile{
+                display: none;
+            }
+            a{
+                text-decoration: none;
+                color: $secColor;
+                transition: all 0.7s ease;
+                &:hover{
+                   color: red; 
+                }
+            }
+            li{
+                margin-right: 10px;
+                display: inline-block;
+            }
+        } 
+        .menu-icon{
+            display: none;
+            @include mobile{
+                display: block;
+            }
 
-    ul{
-        list-style-type: none;
-        display: flex;
-        opacity: 0.5;
-        li{
-            display: flex;
-            align-items: center;
-            margin-right: 10px;
         }
-    }
 }

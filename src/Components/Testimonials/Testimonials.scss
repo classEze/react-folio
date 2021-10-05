@@ -1,0 +1,70 @@
+@import "../../global.scss";
+
+.testimonials{
+    position:relative;
+    .testimonial-head{
+        position: absolute;
+        left: 50%;
+        transform:translateX(-50%);
+        z-index: 4;
+        color: $mainColor;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 2px ;
+        border-bottom:2px solid red ; 
+       }
+
+}
+.container{
+    width: 100vw;
+    height: 100%;
+    position: relative;
+
+    .item{
+        width: 80%;
+        height: 80%;
+        border-radius: 10px;
+        background: rgb(237, 237, 237);
+        padding: 10px;
+        text-align: center;
+        &.even{
+            color: white;
+            background: $mainColor;
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+         }      
+}
+.roller{
+    height: 100%; 
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    // transition: all 2s ease;
+    animation:scroll 20s alternate infinite ease;
+    @keyframes scroll{to{transform: translateX(-200vw);}}
+}
+figure.controls{
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom:1px;
+    z-index: 10;
+
+    >*{
+        background: blue;
+        margin: 0 3px;
+        color: white;
+        font-size: 27px;
+        &:hover{
+            transform:scale(1.1)
+        }
+    }
+}
+

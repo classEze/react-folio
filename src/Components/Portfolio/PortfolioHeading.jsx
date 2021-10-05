@@ -1,7 +1,7 @@
 const PortfolioHeading = ({item,aTab,setATab}) => {
 
     return (
-        <li className={aTab==item.content && "active"} onClick={()=>setATab(item.content)}> 
+        <li key={item.content} className={aTab==item.content ? "active" : ""} onClick={()=>setATab(item.content)}> 
          {item.title}
         </li>
     )

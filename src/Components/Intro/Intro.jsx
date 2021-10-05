@@ -1,31 +1,39 @@
-import { ArrowDownwardOutlined } from '@material-ui/icons'
+import { KeyboardArrowDownOutlined } from '@material-ui/icons'
 import './Intro.scss'
-import {init} from 'ityped'
-import {useEffect, useRef} from 'react'
+import {React, useEffect, useRef} from 'react'
+import {gsap} from 'gsap'
+import TextPlugin from 'gsap/TextPlugin'
 
 export default function Intro() {
-    const typeRef = useRef()    
+    const typeRef = useRef();
+    const parentRef = gsap.utils.selector(typeRef)
+    gsap.registerPlugin(TextPlugin)
+    const tl = useRef()
 
     useEffect(
         ()=>{
-           init (typeRef.current,
-             {showCursor:false,
-                backDelay:1500,
-            strings:["Fullstack developer.", "Problem Solver."]})
+            tl.current = gsap.timeline({duration:2, delay:0})
+            .from(parentRef('.one'), {opacity:0, delay:1,y:-30})
+            .from(parentRef('.two'), {opacity:0, delay:2,y:-20})
+            .to(parentRef('.three'), {text:{value:"A fullstack developer and problem solver."}, duration:4,delay:2})
+            .from(parentRef('.four'), {opacity:0, delay:2,x:-30})
         } ,
         []
     )
     return (
         <div className='intro' id='intro'>
-           <section className='intro-left'>
-               <img src="images/programmer8.jpeg" alt="my-avatar" />
+           <section className='intro-top'>
+               <img src="images/programmer3.jpg" alt="my-avatar" />
+               <img src="/images/eze2.png" alt="Myavatar" />
            </section> 
-           <section  className='intro-right'>
-               <h3> Hello,  </h3>
-               <h2> I am Eze. </h2>
-               <div id="skill-text"> A <span ref={typeRef}> </span></div>
-               <h5> Welcome to my world!!!  </h5>
-               <a href='#portfolio'><ArrowDownwardOutlined className="arrow-down"/></a>
+           <section  className='intro-bottom'>
+           <aside ref={typeRef}>
+               <p  className='one'> Hi there...  </p>
+               <p className='two'> I am Eze. </p>
+               <p className='three'></p>
+               <p className='four'> Welcome to my world!!! </p>
+            </aside>
+            <a href='#portfolio' className='five' ><KeyboardArrowDownOutlined className="arrow-down"/></a>
            </section> 
         </div>
     )

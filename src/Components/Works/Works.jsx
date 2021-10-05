@@ -6,7 +6,7 @@ const Works = () => {
     const [activeSlide, setActiveSlide] = useState(0)   
     const totalSlides = [
         {name:"Searchos", imgUrl:"/images/searchos.png", description:"An hospital Search Application I built using Google Maps and Places Api", github:"https://github.com/classEze", liveUrl:"https://searchos.herokuapp.com"},
-        {name:"Draggable", imgUrl:"/images/draggable.png", description:"Drag and drop todo items, cross out completed items, a lot could be done vanilla...", github:"https://github.com/classEze", liveUrl:"https://searchos.herokuapp.com"},
+        {name:"Draggable", imgUrl:"/images/draggable.png", description:"Drag and drop todo items, cross out completed items, a lot could be done vanilla...", github:"https://github.com/classEze/DraggableTodos", liveUrl:"https://classEze.github.io/draggableTodos"},
         {name:"Converter", imgUrl:"/images/searchos.png", description:"An hospital Search Application I built using Google Maps and Places Api", github:"https://github.com/classEze", liveUrl:"https://searchos.herokuapp.com"},
     ]
 
@@ -19,11 +19,12 @@ const Works = () => {
 
     return (
         <section className='works'>
+            <h2 className="heading"> Projects </h2>
         <ArrowLeft fontSize="large" onClick={previousSlide} className='arrow arrow-left'/>
         <div className="slider" style={{transform:`translateX(-${activeSlide*100}vw)`}}>
             {totalSlides.map(slideContent=>{
          return(
-            <article className="container grid">
+            <article className="container grid-center" key={slideContent.liveUrl}>
                 <div className="item flex">
                     <aside className='flex-col'>
                     <img src={slideContent.imgUrl}/>
@@ -42,7 +43,7 @@ const Works = () => {
             <ArrowRight fontSize="large" onClick={nextSlide} className='arrow arrow-right'/>
             <ul>{totalSlides.map((slide,index)=>{
                 return(
-                    <li className={activeSlide===index && 'active'} onClick={()=>setActiveSlide(index)}> 
+                    <li className={activeSlide===index ? 'active' : ""} key={index} onClick={()=>setActiveSlide(index)}> 
                     </li>
                 )
             }

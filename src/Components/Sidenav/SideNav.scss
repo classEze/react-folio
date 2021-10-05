@@ -7,9 +7,6 @@ div.sidenav{
     right: 0;
     background:$mainColor;
     z-index: 4;
-    display: grid;
-    align-items: center;
-    justify-items: center;
     transition: all 1s ease;
     transform: translateX(320px);
 

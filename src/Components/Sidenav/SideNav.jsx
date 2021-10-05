@@ -2,7 +2,7 @@ import './SideNav.scss'
 
 export default function SideNav({isSidebarOpen}) {
     return (
-        <div className={"sidenav " + (isSidebarOpen?"active":"inactive")} >
+        <div className={"sidenav grid-center " + (isSidebarOpen?"active":"inactive")} >
             <ul>
                 <li> <a href="#intro"> intro </a></li>
                 <li><a href="#portfolio"> Portfolio </a></li>

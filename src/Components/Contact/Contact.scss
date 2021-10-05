@@ -1,0 +1,155 @@
+@import '../../global.scss';
+@mixin submit-button{
+    border: 1px solid rgb(240, 233, 233);
+    width: 320px;
+    position: relative;
+    color: white;
+    background: $mainColor;
+    margin: 10px auto;
+    button,a{
+        background: none;
+        border: none;
+        height: 50px;
+        font-size: 25px;
+        width: 100%;
+        color: inherit;
+        &:focus{
+            outline: none;
+            border: none;
+        }
+   }
+}
+
+@mixin footermixin{
+    background: $secColor;
+    color: white;
+}
+div#contact{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-head{
+    color: $mainColor;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom:2px solid red ;
+    width: max-content;
+    margin-left: 50%;
+    transform: translateX(-50%);
+   }
+
+ // styles
+main.contact{
+    flex: 1;
+    display: grid;
+    background: black;
+     grid-template-columns: 1fr 1fr;
+     margin-top: 10px;
+     height: calc(100%-30px);   `
+
+     div.illustration{
+         img{
+            //  height: 450px;
+            //  width: auto;
+            //  object-fit: contain;
+         }
+     }
+
+    div.the-rest{
+        grid-template-rows: auto 1fr auto auto auto;
+        justify-items: stretch;
+        background: blue;
+       section.form-stration{
+           form{
+               margin: 0;
+               padding: 0;
+            div.fieldset{
+                margin: 5px auto;
+                border:3px solid white;
+                position: relative;
+                >* {
+                    display: block;
+                }
+                label{
+                 position: absolute;
+                 transition: all 0.4s ease;
+                }
+                input{
+                  width: 320px;
+                  height: 50px;
+                  &:focus + label{
+                      background:white;
+                      padding: 2px;
+                      top: 0;
+                      transform: translateY(-50%);
+                  }
+                }
+                textarea{
+                    width: 320px;
+                    height: 120px;
+                }
+                span{
+                    color: red;
+                    font-size: 10px;
+                }
+            }
+            div.button{
+                @include submit-button();
+            }
+               svg{
+                   position: absolute;
+                   top: 50%;
+                   left: 60%;
+                   transform: translateY(-50%);
+                   z-index: 1;
+               }
+            }
+           }
+       } 
+    .social,.resume,.footer{
+        background: rgba(20,20,20,1);
+    }
+    
+    section.social{
+        color: white;
+        border-bottom:1px solid rgb(170, 150, 150);
+        border-top:1px solid rgb(170, 150, 150);
+        padding: 5px;
+        a{
+            text-decoration: none;
+            color: inherit;
+            transition: all 1s ease;
+            &:hover{
+                color: red;
+            }
+        }
+    }
+    
+    section.footer{
+    @include footermixin();
+    justify-content: space-around;
+    padding: 3px;
+    }
+    div.resume-button{
+        margin: 15px 0px;
+        text-align: center;
+    a{
+        width: 320px;
+        height: 50px;
+        text-decoration: none;
+        color:$secColor ;
+        border: 1px solid $secColor;
+        display: inline-block;
+        line-height: 50px;
+        vertical-align: middle;
+        transition: all 1s ease;
+        &:hover{
+            color: white;
+            background: $secColor;
+        }
+
+    }
+   
+}}
+
