@@ -4,11 +4,11 @@ div.header{
     height: 70px;
     width: 100%;
     position: fixed;
-    z-index: 5;
+    z-index: 12;
     padding: 0 15px;
     background: rgba(20, 20, 20,0.1);
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 20px;
          ul{
             list-style-type: none;
             margin-right: calc(100% - 20);
@@ -32,6 +32,7 @@ div.header{
             display: none;
             @include mobile{
                 display: block;
+                font-size: 40px;
             }
 
         }

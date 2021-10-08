@@ -16,7 +16,7 @@ export default function Intro() {
             .from(parentRef('.one'), {opacity:0, delay:1,y:-30})
             .from(parentRef('.two'), {opacity:0, delay:2,y:-20})
             .to(parentRef('.three'), {text:{value:"A fullstack developer and problem solver."}, duration:4,delay:2})
-            .from(parentRef('.four'), {opacity:0, delay:2,x:-30})
+            .from(parentRef('.four'), {opacity:0, delay:1,x:-30})
         } ,
         []
     )
@@ -26,14 +26,16 @@ export default function Intro() {
                <img src="images/programmer3.jpg" alt="my-avatar" />
                <img src="/images/eze2.png" alt="Myavatar" />
            </section> 
-           <section  className='intro-bottom'>
-           <aside ref={typeRef}>
+           <section  className='intro-bottom flex-center'>
+           <aside ref={typeRef} className='bold'>
                <p  className='one'> Hi there...  </p>
                <p className='two'> I am Eze. </p>
                <p className='three'></p>
-               <p className='four'> Welcome to my world!!! </p>
+               <p  className='four'><a target='blank' rel='noopener noreferrer' href="mailto:chibeze.ochonogor@gmail.com?subject=Hey Eze" className="anchor-button"> Hire Me</a></p>
             </aside>
-            <a href='#portfolio' className='five' ><KeyboardArrowDownOutlined className="arrow-down"/></a>
+            <a href='#portfolio'  className="arrow-down" >
+                <KeyboardArrowDownOutlined />
+                </a>
            </section> 
         </div>
     )

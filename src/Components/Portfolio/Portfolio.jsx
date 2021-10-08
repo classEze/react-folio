@@ -3,6 +3,7 @@ import PortfolioHeading from './PortfolioHeading'
 import {useState, useEffect} from 'react'
 import {mobile,backend,design,frontend} from '../../portfolioData'
 import PortfolioItem from './PortfolioItem'
+import { KeyboardArrowDownOutlined } from '@material-ui/icons'
 
 
 export default function Portfolio() {
@@ -42,7 +43,7 @@ export default function Portfolio() {
     ]
 
     return (
-        <section className='portfolio' id='portfolio'>
+    <section className='portfolio' id='portfolio'>
         <div className="portfolio-head"> Skills</div>
         <ul className='portfolio-tabs'>
             {headings.map((item, index)=><PortfolioHeading key={index} aTab={aTab} setATab={setATab} item={item} />)}
@@ -50,6 +51,9 @@ export default function Portfolio() {
         <ul className="items-container">
            { dataArray.map((item,index)=><PortfolioItem key={index} item={item}/>)}
         </ul>
+        <a href='#works' className="arrow-down" >
+            <KeyboardArrowDownOutlined />
+        </a>
         </section>
     )
 }

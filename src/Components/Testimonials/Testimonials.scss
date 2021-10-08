@@ -46,25 +46,24 @@
     align-items: center;
     justify-content: center;
     left: 0;
-    // transition: all 2s ease;
-    animation:scroll 20s alternate infinite ease;
-    @keyframes scroll{to{transform: translateX(-200vw);}}
+    animation:scroll 35s alternate infinite linear;
+    @keyframes scroll{to{transform: translateX(-300vw);}}
 }
-figure.controls{
-    position: absolute;
-    left: 50%;
-    transform:translateX(-50%);
-    bottom:1px;
-    z-index: 10;
+// figure.controls{
+//     position: absolute;
+//     left: 50%;
+//     transform:translateX(-50%);
+//     bottom:1px;
+//     z-index: 10;
 
-    >*{
-        background: blue;
-        margin: 0 3px;
-        color: white;
-        font-size: 27px;
-        &:hover{
-            transform:scale(1.1)
-        }
-    }
-}
+//     >*{
+//         background: blue;
+//         margin: 0 3px;
+//         color: white;
+//         font-size: 27px;
+//         &:hover{
+//             transform:scale(1.1)
+//         }
+//     }
+// }
 

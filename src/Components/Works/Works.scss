@@ -5,13 +5,13 @@
     h2{
         position: absolute;
         left: 50%;
+        margin: 3px;
         transform:translateX(-50%);
         z-index: 4;
         color: white;
         font-size: 22px;
         font-weight: bold;
-        margin: 2px ;
-        border-bottom:2px solid red ; 
+        border-bottom:2px solid red; 
        }
     .slider{
         height: 100%; 
@@ -26,7 +26,7 @@
         width: 100vw;
         height: 100%;
         position: relative;
-        background: $mainColor;
+        background: $secColor;
         .item{
             width: 80%;
             height: 80%;
@@ -35,14 +35,20 @@
             border-radius: 5px;
             background: white;
 
+            .bold{
+                border: 2px solid $mainColor;
+                padding: 3px
+            };
+            .project-description{
+                font-size: 12px;
 
+            };
             aside:nth-child(1){
                 flex:4;
                 img{
                   width: 80%;
                   height: 350px;
                   object-fit: cover;
-                  object-position: 0;
                 }
                 a{
                     margin-top: 5px;
@@ -58,15 +64,23 @@
         position: absolute;
         cursor: pointer;  
         z-index: 2;
-        background: white;
+        background: rgba(164, 164, 196,0.7);
          }        
     .arrow-left{
         top: 50%;
-        left: 7px;
+        left: 10px;
+        @include mobile{
+            left: 2px;
+            font-size: 30px;
+        }
        }
        .arrow-right{
         top: 50%;
-        right: 7px;
+        right: 10px;
+        @include mobile{
+            right: 2px;
+            font-size: 30px;
+        }
     }
     ul{
         position: absolute;
@@ -74,17 +88,24 @@
         left: 50%;
         transform: translateX(-50%);
         li{
+            @include mobile{
+                left: 2px;
+                font-size: 30px;
+                width: 15px;
+                height: 15px;
+    
+            }
+    
             display: inline-block;
-            width: 20px;
             margin: 0 3px;
+            width: 20px;
             height: 20px;
             cursor: pointer;
             border-radius: 50%;
-            border: 1px solid $mainColor;
+            border: 2px solid white;
             transition: all 1s linear;
-            background: white;
             &.active{
-                background: black;
+                background: white;
             }
         }
     }

@@ -8,7 +8,7 @@ overflow: hidden;
      height:50%;
      img:first-child{
          width: 100%;
-         height: 100%;
+         height: 90%;
          object-fit: cover;
      }
      img:last-child{
@@ -16,49 +16,49 @@ overflow: hidden;
          width: 200px;
          height: 200px;
          border-radius: 50%;
-         bottom: -95px;
-         left: 10%;
+         bottom: -30px;
+         left: 50%;
+         transform: translateX(-50%);
          object-fit: cover;
          border: 2px solid white;
          z-index: 5;
      }
      &.intro-bottom{
         .arrow-down{
-            @keyframes fade{
-                from{
-                    transform: translateY(-3px);
-                }
+            svg{
+                position: absolute;
+                bottom:1px;
+                left: 50%;
+                transform: translate(-50%,5px);
+                font-size: 70px;
+                animation:fade 1s infinite alternate linear;
+                @keyframes fade{
+                    to{
+                        opacity: 0.2;
+                        transform: translate(-50%,0);
+
+                    }    
             }
-            position: absolute;
-            bottom:10px;
-            font-size: 70px;
-            animation:fade 0.7s infinite alternate linear;
+            }
          }
-         text-align: center;
+
          background: #ededed;
-         img{
-            opacity: 0.5;
-             width: 45%;
-             height: 100%;
-         }
          aside{
             p {
-                padding: 0;
                 margin: 0;
+                color: $secColor;
+                text-align: center;
                 font-family:"Signika Negative", sans-serif;
                 font-size: 23px;
                 &.three{
-                color: $mainColor;
                 font-family: "Poppins";
+                margin-bottom: 10px;
                 }
-    
+                a{
+                    display: inline-block;
+                }
+
             }
-             position: absolute;
-             top: 10px;
-             left: 50%;
-             padding: 3px 20px;
-             transform: translateX(-50%);
-             font-size: 16px;
          }
          
      }

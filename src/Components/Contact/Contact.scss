@@ -1,10 +1,9 @@
 @import '../../global.scss';
 @mixin submit-button{
-    border: 1px solid rgb(240, 233, 233);
     width: 320px;
     position: relative;
     color: white;
-    background: $mainColor;
+    background: $secColor;
     margin: 10px auto;
     button,a{
         background: none;
@@ -27,6 +26,7 @@
 div#contact{
     display: flex;
     flex-direction: column;
+    background: rgba(0,0,0,0.1);
 }
 
 .contact-head{
@@ -42,31 +42,50 @@ div#contact{
  // styles
 main.contact{
     flex: 1;
-    display: grid;
-    background: black;
-     grid-template-columns: 1fr 1fr;
+    display: flex;
      margin-top: 10px;
-     height: calc(100%-30px);   `
 
      div.illustration{
          img{
-            //  height: 450px;
-            //  width: auto;
-            //  object-fit: contain;
+             width: 80%;
+             object-fit: cover;
+             object-position:center;
+         };
+         @include mobile{
+             display:none;
          }
      }
 
     div.the-rest{
         grid-template-rows: auto 1fr auto auto auto;
         justify-items: stretch;
-        background: blue;
+        aside.resume-button{
+            margin: 15px 0px;
+            text-align: center;
+        a{
+            width: 320px;
+            height: 50px;
+            text-decoration: none;
+            color:$secColor ;
+            border: 1px solid $secColor;
+            display: inline-block;
+            line-height: 50px;
+            vertical-align: middle;
+            transition: all 1s ease;
+            &:hover{
+                color: white;
+                background: $secColor;
+            }
+    
+        }
+    }
+
        section.form-stration{
            form{
                margin: 0;
                padding: 0;
             div.fieldset{
                 margin: 5px auto;
-                border:3px solid white;
                 position: relative;
                 >* {
                     display: block;
@@ -87,7 +106,7 @@ main.contact{
                 }
                 textarea{
                     width: 320px;
-                    height: 120px;
+                    height: 100px;
                 }
                 span{
                     color: red;
@@ -107,14 +126,14 @@ main.contact{
             }
            }
        } 
-    .social,.resume,.footer{
-        background: rgba(20,20,20,1);
-    }
-    
+   }
+   footer{
+    @include footermixin();
+    padding-bottom: 7px ;
     section.social{
         color: white;
-        border-bottom:1px solid rgb(170, 150, 150);
-        border-top:1px solid rgb(170, 150, 150);
+        border-bottom:1px solid rgba(170, 150, 150, 0.3);
+        border-top:1px solid rgba(170, 150, 150, 0.3);
         padding: 5px;
         a{
             text-decoration: none;
@@ -125,31 +144,14 @@ main.contact{
             }
         }
     }
-    
-    section.footer{
-    @include footermixin();
-    justify-content: space-around;
-    padding: 3px;
-    }
-    div.resume-button{
-        margin: 15px 0px;
-        text-align: center;
-    a{
-        width: 320px;
-        height: 50px;
-        text-decoration: none;
-        color:$secColor ;
-        border: 1px solid $secColor;
-        display: inline-block;
-        line-height: 50px;
-        vertical-align: middle;
-        transition: all 1s ease;
-        &:hover{
-            color: white;
-            background: $secColor;
+    .footer-contact{
+        padding: 10px;
+        justify-content: space-between;
+        @include mobile{
+            font-size: 14px;
         }
+    }
 
     }
-   
-}}
+
 

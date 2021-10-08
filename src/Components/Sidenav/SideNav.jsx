@@ -1,15 +1,18 @@
 import './SideNav.scss'
 
-export default function SideNav({isSidebarOpen}) {
+export default function SideNav({isSidebarOpen, closeSideBar}) {
     return (
-        <div className={"sidenav grid-center " + (isSidebarOpen?"active":"inactive")} >
+        <section className={"nav-container flex " + (isSidebarOpen?"active":"inactive")} onClick={closeSideBar}>
+        <div></div>
+        <nav className="sidenav grid-center" >
             <ul>
-                <li> <a href="#intro"> intro </a></li>
-                <li><a href="#portfolio"> Portfolio </a></li>
+                <li> <a href="#intro"> Home </a></li>
+                <li><a href="#portfolio"> Skills </a></li>
+                <li><a href="#works"> Projects</a> </li>
                 <li><a href="#testimonials"> Testimonials</a> </li>
                 <li><a href="#contact"> Contact Me </a></li>
-
             </ul>  
-        </div>
+        </nav>
+        </section>
     )
 }

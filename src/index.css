@@ -38,14 +38,16 @@ code {
 
 }
 .anchor-button{
-  padding: 5px 10px;
+  border-radius: 4px;
+  padding: 5px 13px;
   background: red;
   color: white;
   text-decoration: none;
   transition: all 1.5s ease;
+  box-shadow: 1px -1px 3px 1px rgba(20,20,20,0.3);
 }
 .anchor-button:hover{
-  transform: scaleX(1.1);
+  transform: scaleX(1.2);
 }
 .bold{
   font-weight:bold

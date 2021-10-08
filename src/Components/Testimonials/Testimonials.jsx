@@ -1,6 +1,7 @@
 import {useEffect,useRef, useState} from 'react'
 import './Testimonials.scss'
 import {testimonials} from '../../testimonialData'
+import { LinkedIn } from '@material-ui/icons';
 // import gsap from 'gsap'
 // import { FastForward, FastRewind, Pause, PlayArrow } from '@material-ui/icons'
 
@@ -30,6 +31,11 @@ export default function Testimonials() {
                     <p> 
                         {oneT.body}
                     </p>
+                    <p> <a href={oneT.connect} target='_blank' rel='noopener noreferrer' className='anchor-button outlined flex-center'>
+                        <span> Connect </span>
+                         <LinkedIn />
+
+                        </a></p>
                     </div> 
                     </aside>
                  )
